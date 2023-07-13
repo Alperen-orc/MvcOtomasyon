@@ -13,12 +13,12 @@ namespace MvcOtomasyon.Models.Siniflar
 		public int Adminid { get; set; }
 		[Column(TypeName = "Varchar")]
 		[StringLength(10)]
-		public int KullaniciAd { get; set; }
+		public string KullaniciAd { get; set; }
 		[Column(TypeName = "Varchar")]
 		[StringLength(10)]
-		public int Sifre { get; set; }
+		public string Sifre { get; set; }
 		[Column(TypeName = "Char")]
 		[StringLength(1)]
-		public int Yetki { get; set; }
+		public char Yetki { get; set; }
 	}
 }
