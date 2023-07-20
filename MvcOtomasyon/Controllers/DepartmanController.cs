@@ -57,5 +57,12 @@ namespace MvcOtomasyon.Controllers
 
             return View(deger);
 		}
+        public ActionResult DepartmanPersonelSatis(int id)
+		{
+            var degerler = c.SatisHarekets.Where(x => x.Personelid == id).ToList();
+            var per = c.Personels.Where(x => x.Personelid == id).Select(y => y.PersonelAd + " " + y.PersonelSoyad).FirstOrDefault();
+            ViewBag.dpers = per;
+            return View(degerler);
+		}
     }
 }
