@@ -52,6 +52,24 @@ namespace MvcOtomasyon.Controllers
 			var deger = c.SatisHarekets.Find(id);
 			return View("SatisGetir",deger);
 		}
+		public ActionResult SatisGuncelle(SatisHareket s)
+		{
+			var deger = c.SatisHarekets.Find(s.Satisid);
+			deger.Cariid = s.Cariid;
+			deger.Adet = s.Adet;
+			deger.Fiyat = s.Fiyat;
+			deger.Personelid = s.Personelid;
+			deger.Tarih = s.Tarih;
+			deger.ToplamTutar = s.ToplamTutar;
+			deger.Urunid = s.Urunid;
+			c.SaveChanges();
+			return RedirectToAction("Index");
+		}
+		public ActionResult SatisDetay(int id)
+		{
+			var deger = c.SatisHarekets.Where(x => x.Satisid == id).ToList();
+			return View(deger);
+		}
 
 	}
 }
