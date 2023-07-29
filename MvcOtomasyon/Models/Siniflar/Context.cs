@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MvcOtomasyon.Models.Siniflar
 {
-	public class Context:DbContext
+	public class Context : DbContext
 	{
 		public DbSet<Admin> Admins { get; set; }
 		public DbSet<Cariler> Carilers { get; set; }
@@ -18,5 +18,6 @@ namespace MvcOtomasyon.Models.Siniflar
 		public DbSet<Personel> Personels { get; set; }
 		public DbSet<SatisHareket> SatisHarekets { get; set; }
 		public DbSet<Urun> Uruns { get; set; }
+		public DbSet<Detay> Detays { get; set; }
 	}
 }
