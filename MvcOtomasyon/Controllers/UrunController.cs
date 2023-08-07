@@ -11,10 +11,14 @@ namespace MvcOtomasyon.Controllers
     {
         // GET: Urun
         Context c = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var urun = c.Uruns.Where(x=>x.Durum==true).ToList();
-            return View(urun);
+            var urun = from x in c.Uruns select x;
+            if(!string.IsNullOrEmpty(p))
+			{
+                urun = urun.Where(y => y.UrunAd.Contains(p));
+			}
+            return View(urun.ToList());
         }
         [HttpGet]
         public ActionResult YeniUrun()

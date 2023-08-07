@@ -17,8 +17,8 @@ namespace MvcOtomasyon.Models.Siniflar
 		[Column(TypeName = "Varchar")]
 		[StringLength(10)]
 		public string Sifre { get; set; }
-		[Column(TypeName = "Char")]
+		[Column(TypeName = "VarChar")]
 		[StringLength(1)]
-		public char Yetki { get; set; }
+		public string Yetki { get; set; }
 	}
 }

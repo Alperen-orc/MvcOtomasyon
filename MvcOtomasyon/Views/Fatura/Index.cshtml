@@ -7,17 +7,14 @@
 
 <table class="table table-bordered" style="margin-top:20px">
     <tr>
-        <th>ID</th>
-        <th>Seri No</th>
-        <th>Sıra No</th>
-        <th>Vergi Dairesi</th>
+        <th>Seri Sıra No</th>
         <th>Tarih</th>
         <th>Saat</th>
         <th>Toplam</th>
-        <th>Teslim Eden</th>
-        <th>Teslim Alan</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
+        <th>Popup Liste</th>
+        <th>Yeni Kalem</th>
 
 
     </tr>
@@ -25,17 +22,9 @@
     {
 
 <tr>
+
     <td>
-        @k.Faturaid
-    </td>
-    <td>
-        @k.FaturaSerino
-    </td>
-    <td>
-        @k.FaturaSirano
-    </td>
-    <td>
-        @k.VergiDairesi
+        @k.FaturaSerino @k.FaturaSirano
     </td>
     <td>
         @k.Tarih
@@ -44,13 +33,7 @@
         @k.Saat
     </td>
     <td>
-        @k.TeslimEden
-    </td>
-    <td>
-        @k.TeslimAlan
-    </td>
-    <td>
-        @k.Toplam
+        @k.Toplam ₺
     </td>
 
     <td>
@@ -58,6 +41,12 @@
     </td>
     <td>
         <a href="/Fatura/FaturaDetay/@k.Faturaid" class="btn btn-default" style="background-color:cornflowerblue; color:white">Detaylar</a>
+    </td>
+    <td>
+        <a href="/Fatura/FaturaDetay/@k.Faturaid" class="btn btn-default" style="background-color:blueviolet; color:white">Popup</a>
+    </td>
+    <td>
+        <a href="/Fatura/FaturaDetay/@k.Faturaid" class="btn btn-default" style="background-color:darkgrey; color:white">Kalem</a>
     </td>
 </tr>
     }
