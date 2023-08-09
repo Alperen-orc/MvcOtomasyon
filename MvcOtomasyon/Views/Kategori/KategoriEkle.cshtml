@@ -10,6 +10,11 @@
     @Html.LabelFor(x=>x.KategoriAD)
     @Html.TextBoxFor(x=>x.KategoriAD,new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kategori başarılı bir şekilde eklendi.")
+        });
+    </script>
 </form>
 
