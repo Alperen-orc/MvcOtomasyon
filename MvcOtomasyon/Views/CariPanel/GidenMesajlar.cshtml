@@ -3,7 +3,7 @@
 
 @{
 
-    ViewBag.Title = "GelenMesajlar";
+    ViewBag.Title = "GidenMesajlar";
 
     Layout = "~/Views/Shared/_CariLayout.cshtml";
 
@@ -353,11 +353,11 @@
 
                                             <td class="mailbox-star"><a href="#"></a></td>
 
-                                            <td class="mailbox-name"><a href="/CariPanel/MesajDetay/@x.MesajID">@x.Gönderici</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@x.Gönderici</a></td>
 
                                             <td class="mailbox-subject">
 
-                                                <b>@x.Konu</b> - @x.İcerik.Substring(20).ToString()...
+                                                <b>@x.Konu</b> - @x.İcerik.Substring(0, 40).ToString()...
 
                                             </td>
 
