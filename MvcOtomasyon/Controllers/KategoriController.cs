@@ -49,5 +49,26 @@ namespace MvcOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
 		}
+        public ActionResult Deneme()
+		{
+            Class3 cs = new Class3();
+            cs.Kategoriler = new SelectList(c.Kategoris, "KategoriID", "KategoriAD");
+            cs.Urunler = new SelectList(c.Uruns, "Urunid", "UrunAd");
+            return View(cs);
+		}
+
+        public JsonResult UrunGetir(int p)
+		{
+            var urunler = (from x in c.Uruns
+                           join y in c.Kategoris
+                           on x.Kategori.KategoriID equals y.KategoriID
+                           where x.Kategori.KategoriID == p
+                           select new
+                           {
+                               Text = x.UrunAd,
+                               Value = x.Urunid.ToString()
+                           });
+            return Json(urunler,JsonRequestBehavior.AllowGet);
+		}
     }
 }

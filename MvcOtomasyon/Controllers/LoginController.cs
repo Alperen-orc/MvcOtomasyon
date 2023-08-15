@@ -8,6 +8,7 @@ using MvcOtomasyon.Models.Siniflar;
 
 namespace MvcOtomasyon.Controllers
 {
+	[AllowAnonymous]
 	public class LoginController : Controller
 	{
 		// GET: Login

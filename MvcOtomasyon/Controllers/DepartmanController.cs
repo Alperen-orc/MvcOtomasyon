@@ -7,6 +7,7 @@ using MvcOtomasyon.Models.Siniflar;
 
 namespace MvcOtomasyon.Controllers
 {
+    [Authorize]
     public class DepartmanController : Controller
     {
         // GET: Departman
@@ -21,7 +22,7 @@ namespace MvcOtomasyon.Controllers
 		{
             return View();
 		}
-
+        [Authorize]
         [HttpPost]
         public ActionResult DepartmanEkle(Departman d)
 		{
