@@ -72,5 +72,36 @@ namespace MvcOtomasyon.Controllers
             cs.deger2 = c.FaturaKalems.ToList();
             return View(cs);
 		}
+
+        public ActionResult FaturaKaydet(string FaturaSerino, string FaturaSirano,DateTime Tarih,string VergiDairesi,string Saat,string TeslimEden,string TeslimAlan,string Toplam,FaturaKalem [] kalemler)
+		{
+            Faturalar f = new Faturalar();
+            f.FaturaSerino = FaturaSerino;
+            f.FaturaSirano = FaturaSirano;
+            f.Tarih = Tarih;
+            f.VergiDairesi = VergiDairesi;
+            f.Saat = Saat;
+            f.TeslimEden = TeslimEden;
+            f.TeslimAlan = TeslimAlan;
+            f.Toplam = decimal.Parse(Toplam);
+
+            c.Faturalars.Add(f);
+
+			foreach (var x in kalemler)
+			{
+                FaturaKalem fk = new FaturaKalem();
+                fk.Aciklama = x.Aciklama;
+                fk.BirimFİyat = x.BirimFİyat;
+                fk.Faturaid = x.Faturaid;
+                fk.Miktar = x.Miktar;
+                fk.Tutar = x.Tutar;
+
+                c.FaturaKalems.Add(fk);
+
+			}
+            c.SaveChanges();
+            return Json("İşlem Başarılı", JsonRequestBehavior.AllowGet);
+
+		}
     }
 }
